@@ -39,7 +39,7 @@ istream & operator>>(istream & is, Monom & B)
 
 ostream & operator<<(ostream & os, Monom & B)
 {	
-	if (B.getDegree() > 0)
+	/*if (B.getDegree() > 0)
 	{
 		if (B.getCoef() > 1)
 		{
@@ -58,8 +58,15 @@ ostream & operator<<(ostream & os, Monom & B)
 	else {
 		if (B.getCoef() != 0)
 			cout << B.getCoef();
-	}
-	return os;
+	}*/
+	int c = B.getCoef();
+	if (c < 0)
+		cout << "(";
+	cout << B.getCoef();
+	if (c < 0)
+		cout << ")";
+	cout<< "X^" << B.getDegree();
+		return os;
 }
 
 const Monom & Monom::operator=(const Monom & B)

@@ -12,7 +12,32 @@ void PolinomReductibil::setNoRoots(int x)
 
 void PolinomReductibil::setRoot(int x, int poz)
 {
-	roots[poz] = x;
+	if(poz<noRoots)
+		roots[poz] = x;
+	else cout << "Imposibil\n\n";
+}
+
+int PolinomReductibil::getNoRoots()const
+{
+	return noRoots;
+}
+
+const PolinomReductibil & PolinomReductibil::operator=(const PolinomReductibil & B)
+{
+	if (&B != this)
+	{
+		noMonoms = B.getNoMonoms();
+		delete[] m;
+		m = new Monom[noMonoms];
+		for (int i = 0; i < noMonoms; i++)
+			m[i] = B.m[i];
+		noRoots = B.getNoRoots();
+		delete[] roots;
+		roots = new int[noRoots];
+		for (int i = 0; i < noRoots; i++)
+			roots[i] = B.roots[i];
+	}
+	return *this;
 }
 
 void PolinomReductibil::readPolinom()

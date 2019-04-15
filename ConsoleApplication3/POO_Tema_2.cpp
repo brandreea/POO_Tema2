@@ -11,20 +11,22 @@ using namespace std;
 int main()
 {
 	Polinom D;
-	cout << "Citim un polinom oarecare:\n";
+	/*cout << "Citim un polinom oarecare:\n";
 	cin >> D;
 	cout << D;
 	Polinom E;
 	E = D;
 	cout << E;
-	E.showPolinom();
-	PolinomReductibil A;
+	//E.showPolinom();*/
+	PolinomReductibil A,B;
 	A.readPolinom();
 	A.showPolinom();
-	PolinomIreductibil B,C;
+	B = A;
+	B.showPolinom();
+	/*PolinomIreductibil B,C;
 	cout << "Citim un polinom ireductibil:\n";
 	cin >> B;
 	cout << B;
-	B.EisensteinCriteria();
+	B.EisensteinCriteria();*/
 	return 0;
 }

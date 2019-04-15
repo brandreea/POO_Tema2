@@ -41,17 +41,20 @@ Monom Polinom::getMonom(int poz)const
 
 
 const Polinom & Polinom::operator=(const Polinom & B)
-{
-	noMonoms = B.getNoMonoms();
-	delete[] m;
-	m = new Monom[noMonoms];
-	for (int i = 0; i < noMonoms; i++)
-		m[i] = B.m[i];
+{	
+	if (&B != this)
+	{
+		noMonoms = B.getNoMonoms();
+		delete[] m;
+		m = new Monom[noMonoms];
+		for (int i = 0; i < noMonoms; i++)
+			m[i] = B.m[i];
+	}
 	return *this;
-	return *this;
+	
 }
 
-void Polinom::readPolinom()
+/*void Polinom::readPolinom()
 {
 	cout << "Introduceti gradul maxim +1, iar apoi, pe rand, coeficientii monoamelor si gradul fiecaruia in ordine descrescatpare.\n";
 	cin >> (*this);
@@ -60,13 +63,14 @@ void Polinom::readPolinom()
 void Polinom::showPolinom()
 {
 	cout << (*this);
-}
+}*/
 
 
 
 Polinom::~Polinom()
 {	
-	delete[] m;
+	if(m!=NULL)
+	   delete[] m;
 }
 
 istream & operator>>(istream & is, Polinom & P)

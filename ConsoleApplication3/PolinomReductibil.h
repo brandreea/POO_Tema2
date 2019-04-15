@@ -3,6 +3,7 @@
 class PolinomReductibil:public Polinom
 {
 protected:
+	friend class Monom;
 	int *roots, noRoots;
 
 public:
@@ -12,6 +13,11 @@ public:
 	//functii set
 	void setNoRoots(int x);
 	void setRoot(int x, int poz);
+
+	//get nr noduri
+	int getNoRoots()const;
+	//operatorul =
+	const PolinomReductibil &operator = (const PolinomReductibil &B);
 
 	//functie de citire,afisare
 	void readPolinom();

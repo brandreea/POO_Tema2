@@ -29,8 +29,8 @@ public:
 	const Polinom &operator = (const Polinom &B);
 
 	//functie de afisare
-	virtual void readPolinom();
-	virtual void showPolinom();
+	virtual void readPolinom() {};
+	virtual void showPolinom() {};
 
 	//destructor
 	virtual ~Polinom();
